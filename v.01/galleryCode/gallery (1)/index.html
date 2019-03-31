@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/css/customize/main.css">
+    <link rel="stylesheet" href="lib/css/customize/animation.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <title>Longxiang Qian</title>
+</head>
+<body>
+    <div id = "gallery-page">
+        <div id = "gallery-1" class="d-flex flex-nowrap">
+        </div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        var imgList, element;
+        var jsonURL = "images.json";
+        $.getJSON(jsonURL, function(json){
+            imgList = "";
+            $.each(json.images, function(){
+                if(this.orientation == "landscape"){
+                    element = " <div class = 'm-1 gallery-1-image-landscape'><img class = 'img-fluid VCentered' src = '" + this.url + "'></div>";
+                }
+                else{
+                    element =  " <div class = 'm-1 gallery-1-image'><img class = 'img-fluid' src = '" + this.url + "'></div>";
+                }
+                $("#gallery-1").append(element);
+                console.log(this.url);
+            });
+        })
+        
+    });
+    //Landing page fade on click
+    $("#landing-image").click(function(){
+        $(".intro").addClass("fadeOutUp");
+    });
+    
+    $(window).scroll(function() {
+        $(".slideanim").each(function(){
+            var pos = $(this).offset().top;
+
+            var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+                $(this).addClass("slide");
+            }
+        });
+    });
+    
+
+
+</script>
+</html>

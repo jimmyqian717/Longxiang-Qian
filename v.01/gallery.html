@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/css/customize/main.css">
+    <link rel="stylesheet" href="lib/css/customize/animation.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <title>Gallery</title>
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <div class = "scrollBtn">
+        <a class = "scrollButton" id = "scrollButton-1"></a>
+        <a class = "scrollButton" id = "scrollButton-2"></a>
+    </div>
+    <div class = "container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-sm-3 first" id = "firstImage">
+                <img class = "img-fluid" src = "images/1-1.jpg">
+            </div>
+            <div class="col-sm-3">
+                <img class = "img-fluid" src = "images/1-2.jpg">
+            </div>
+            <div class="col-sm-3">
+                <img class = "img-fluid" src = "images/1-3.jpg">
+            </div>
+            <div class="col-sm-3 last">
+                <img class = "img-fluid" src = "images/1-4.jpg">
+            </div>
+            <div class="col-sm-3">
+                <img class = " img-fluid" src = "images/1-5.jpg">
+            </div>
+            <div class="col-sm-3"  id  = "lastImage">
+                <img class = "img-fluid" src = "images/1-6.jpg">
+            </div>
+        </div>
+    </div>
+    <script>
+        var nImages = $('.col-sm-3').length;
+        // Prev image
+        $("#scrollButton-1").click(function() {
+            event.preventDefault();
+            // if the current one is not the first image
+            if ($("div.first").attr("id") != "firstImage"){
+                console.log("Left");
+                $("div.first").prev().addClass("first");
+                $("div.first:eq(1)").removeClass("first");
+                $("div.last").prev().addClass("last");
+                $("div.last:eq(1)").removeClass("last");
+
+            }
+            else{
+                console.log("Beginning");
+            }
+            
+            $('html,body').animate({
+                scrollLeft: $("div.first").offset().left
+            }, "fast");
+        });
+        // Next image
+        $('#scrollButton-2').click(function() {
+            event.preventDefault();
+            // if the current one is not the last image
+            if ($("div.last").attr("id") != "lastImage" ){
+                console.log("Right");
+                //Add active class to the next image, remove the current one
+                $("div.last").next().addClass("last");
+                $("div.last:eq(0)").removeClass("last");
+                $("div.first").next().addClass("first");
+                $("div.first:eq(0)").removeClass("first");
+            }
+            else{
+                console.log("Ending");
+            }
+           
+            $('html,body').animate({
+                scrollLeft: $("div.last").offset().left
+            }, "fast");
+            
+
+        });
+    
+    
+    </script>
+</body>
+</html>
