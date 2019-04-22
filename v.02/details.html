@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Longxiang Qian</title>
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/main.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/galleryCarousel.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <style>
+        .card-columns {
+            column-count: 4;
+        }
+        #myImage{
+            display:block;
+            position:relative;
+            opacity:0;
+        }
+        .fadeIn{
+            animation: fadeIn .3s ease-out forwards;
+        }
+        @keyframes fadeIn{
+            0%{
+                transform: translateY(-50px);
+                opacity:0;
+            }
+            100%{
+                transform: translateY(0px);
+                opacity:1
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <section style = "height:100vh">
+        <div class="row VCentered" style = "">
+            <div class="col-sm-5"><button type="button" class="btn btn-outline-primary VCentered" onclick = "window.history.back()">Back</button></div>
+            <div class="col-sm-2"><img id = "myImage" class = "img-fluid"></div>
+            <div class="col-sm-5"></div>
+        </div>
+    </section>
+    <section>
+            <div class="card-columns gallery">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img class="card-img" src="" alt="Card image">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+    </section>
+    
+    <script>
+        $(document).ready(function(){
+            //$("#myImage").hide(0).fadeIn(300);
+            $("#myImage").addClass("fadeIn");
+        });
+       
+
+
+        var imageTitle = (localStorage.getItem("imageName"));
+        var imagePath = "/images/" + imageTitle + ".jpg";
+        document.getElementById("myImage").src = imagePath;
+        document.getElementsByClassName("card-img")[0].src = imagePath;
+
+        var imgList, element;
+        var jsonURL = "images.json";
+        var counter = 1;
+        $.getJSON(jsonURL, function(json){
+            imgList = "";
+            $.each(json.section, function(){
+                var currentCover = this.coverImage[0].url;
+                if (currentCover === imagePath){
+                    $.each(this.images, function(){
+                        console.log(this.url);
+                        element = 
+                        "<div class='card text-center'>\
+                            <div class='card-body'>\
+                                    <img class='card-img' src='" + this.url + "' alt='Card image'>\
+                                    <h5 class='card-title'>Card title</h5>\
+                                    <p class='card-text'>This card has supporting text below as a natural lead-in to additional content.</p>\
+                                    <p class='card-text'><small class='text-muted'>Last updated 3 mins ago</small></p>\
+                            </div>\
+                        </div>";
+                        $(".gallery").append(element);
+                    })
+                }
+                
+                //$(".gallery").
+            });
+        })
+
+
+
+
+        
+        //var url_string = window.location.href;
+        //var url = new URL(url_string);
+        //var c = url.searchParams.get("c");
+        //console.log(c);
+    </script>
+</body>
+</html>

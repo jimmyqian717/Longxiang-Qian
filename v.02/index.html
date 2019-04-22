@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Longxiang Qian</title>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Sail|Poiret+one|Amaranth" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/main.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/navbar.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/gallery.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/animation.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target=".navbar-nav" data-offset="60">
+    <nav class="navbar navbar-expand-md">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content">
+            <div id = "navIcon" onclick="animateBtn(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav " id = "navbar-content">
+            <li class="nav-item">
+              <a class="nav-link" href="#section-1">Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>    
+          </ul>
+        </div>  
+    </nav>
+    <div class="landing-page page" id = "landing">
+        <div class = "container-fluid VCentered">
+            <div class = "row">               
+                <div class = "col-sm-2"></div>
+                <div class = "col-sm-8">
+                    <div class = "intro-container">
+                        <img class = "image-md landing-img" src = "/images/landing.jpg">
+                        <div class = "intro-heading">
+                            <h1 class = "intro-heading-en"><i>Hello.</i></h1>
+                            <h1 class = "intro-heading-ch"><span style = "color:#FFB300">你好。</span></h1>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class = "col-sm-2">
+                    <div class = "name-tag">
+                        <h1 class = "name-tag-en">钱龙翔,<br>Jimmy Qian</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id = "section-1"></a>
+    <section class = "gallery">
+        <div class = "bg-wrapper">
+            <div id = "gallery-bg-cold" class = "VCentered gallery-bg">
+                <h1 id = "gallery-heading-1" class = "gallery-heading VCentered slideanim">
+                    <strong style = "font-size:4.5vw">COLD</strong> & <strong style = "font-size:4.5vw">SLEEK</strong><br>
+                    <strong style = "font-size:4.5vw">冷色</strong>
+                </h1>
+            </div>
+        </div>
+         <div class = "bg-wrapper">
+            <div  id = "gallery-bg-warm" class = "VCentered gallery-bg">
+                <h1 id = "gallery-heading-2" class = "gallery-heading VCentered slideanim">
+                    <strong style = "font-size:4.5vw">WARM</strong> & <strong style = "font-size:4.5vw">COZY</strong><br>
+                    <strong style = "font-size:4.5vw">暖色</strong>
+                </h1>
+            </div>
+        </div>
+        
+
+    </section>
+    <!--Scrolling scripts-->
+    <script>
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+        function animateBtn(x) {
+            x.classList.toggle("change");
+        }
+        // Navbar toggle on scroll
+        var lastScrollTop = 0;
+            $(window).scroll(function(event){
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop){
+                if (!($('.navbar').is(":hover"))){
+                    setTimeout(1000);
+                    $('.navbar').fadeOut("fast");
+                }
+            }
+            else {
+                $('.navbar').fadeIn("fast");
+            }
+            
+            lastScrollTop = st;
+        });
+      
+    </script>
+    <!--Page transition scripts-->
+    <script>
+        var coldBg = $("#gallery-bg-cold");
+        var warmBg = $("#gallery-bg-warm");
+        var counter1 = 0;
+        var counter2 = 0;
+        var vibe = "";
+        $(document).ready(function(){
+            coldBg.click(function(){
+                console.log("Counter1:" + counter1%2);
+                counter1++;
+                vibe = "cold-vibe";
+                toggleFade(coldBg, counter1, vibe);
+            });
+            warmBg.click(function(){
+                console.log("Counter2: " + counter2%2);
+                counter2++;
+                vibe = "warm-vibe";
+                toggleFade(warmBg, counter2, vibe);
+            });
+        });
+        function toggleFade(x, count, page){
+            if (count%2 != 0){
+                    x.addClass("fadeUp");
+                    x.removeClass("fadeIn");
+                    setTimeout(function(){
+                        window.location.href = page + ".html";
+                    }, 500);
+            }
+            else{
+                x.removeClass("fadeUp");
+                x.addClass("fadeIn");
+            }
+            
+        }
+        function toggleGallery(x, count){
+            if (count%2 == 0){
+                    x.addClass("fadeUp");
+                    x.removeClass("fadeIn");
+            }
+            else{
+                x.removeClass("fadeUp");
+                x.addClass("fadeIn");
+            }
+            
+        }
+    </script>
+    
+</body>
+</html>

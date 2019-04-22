@@ -1,0 +1,113 @@
+body::-webkit-scrollbar { 
+    display: none; 
+}
+*{
+    font-family: "Montserrat";
+    user-select: none;
+}
+body,html{
+  scroll-behavior: smooth;
+  background-color:#060606;
+  transition:.2s ease-in-out
+}
+.page{
+    height:100vh;
+    display:block;
+}
+
+
+.VCentered{
+    position: relative;
+    top:50%;
+    transform:translateY(-50%);
+}
+.overlay{
+    position: absolute;
+    background-color:black;
+    opacity: .2;
+    height:100vh;
+    width:100vw;
+    z-index: 9;
+}
+.row, [class*="col-sm"]{
+    margin:0;
+    padding:0;
+}
+
+@media only screen and (min-width: 768px) {
+  .landing-page{
+    
+  }
+
+
+  .name-tag{
+    position: absolute;
+    bottom:0;
+  }
+  .name-tag h1{
+    font-size:20px;
+    color:white;
+    font-weight: 100;
+    margin:0 auto;
+    text-align: right;
+    font-weight: 500;
+  }
+
+  .intro-heading{
+    color:white;
+    position: absolute;
+    bottom:0px;
+    left:330px;
+  }
+  .intro-heading-en, .intro-heading-ch{
+    font-size:86px;
+    font-weight:bold;
+    margin:0;
+    bottom:0;
+  }
+
+  .landing-img{
+    display:block;
+    margin:0 auto;
+  }
+
+  .profile-image{
+      display:block;
+      position:relative;
+      margin:0 auto;
+
+  }
+
+
+
+  .end-heading{
+      font-size:10vw;
+      font-weight:600;
+      text-align: center;
+      background: rgb(0,176,255);
+      background: linear-gradient(135deg, rgba(0,176,255,1) 0%, rgba(46,255,185,1) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+  }
+  .credit-text{
+      margin-top:20vh;
+      font-size:20px;
+      font-weight:300;
+      text-align: center;
+      background: rgb(0,176,255);
+      background: linear-gradient(135deg, rgba(0,176,255,1) 0%, rgba(46,255,185,1) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+  }
+  @keyframes profileReveal {
+      from{
+          left:0;
+      }
+      to{
+          left:-20vw;
+      }    
+  }
+
+}
