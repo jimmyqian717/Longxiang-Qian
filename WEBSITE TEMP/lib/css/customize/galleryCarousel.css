@@ -1,0 +1,49 @@
+.scrollBtn{
+    width:100%;
+    position: absolute;;
+    top:50vh;
+    z-index:99;
+}
+.scrollButton{
+    display:inline-block;
+    position:inherit;
+    width:50px;
+    height:50px;
+    text-align: center;
+    font-size:50px;
+    font-weight: 100
+}
+.scrollButton i{
+    color:#F7E123;
+    opacity:.5;
+    transition: .2s ease-in;
+}
+.scrollButton i:hover{
+    opacity:1;
+    cursor: pointer;
+}
+.scrollButton:nth-child(1){
+    left:50px;
+}
+.scrollButton:nth-child(2){
+    right:50px;
+}
+
+.container-fluid{
+    padding:0 !important;
+}
+.image{
+    display:block;
+    margin:0 auto;
+    transition:.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .scrollBtn{
+        visibility: hidden;
+    }
+    .slick-slide{
+        width:80vw;
+        margin:0 10vw;
+    }
+}
