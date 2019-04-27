@@ -5,7 +5,7 @@
         $msg = "file detected";
         
         $fileName = $_FILES["userDataset"]["name"];
-        $target = "/uploads/".$fileName;
+        $target = "uploads/".basename($fileName);
         
         $fileType = pathinfo($target, PATHINFO_EXTENSION);
         // Allow ONE dataset format
@@ -20,7 +20,7 @@
         else{
             $msg =  ".csv dataset detected.";
             echo "<h1>".$fileName . " does not exist on server. </h1>";
-            if(move_uploaded_file($_FILES['userDataset']['name'], $target)){
+            if(move_uploaded_file($_FILES['userDataset']['tmp_name'], $target)){
                 $msg = "Upload successful";
             }
             else{
@@ -31,6 +31,5 @@
         var_dump($_FILES['userDataset']['error']);
         var_dump($target);
     }
-    echo phpinfo();
     
 ?>
