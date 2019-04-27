@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Longxiang Qian</title>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Sail|Poiret+one|Amaranth" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/main.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/navbar.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/gallery.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/animation.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target=".navbar-nav" data-offset="60">
+    <section id = "preloader" style = "height:100vh; width:100vw; background-color:black;position:fixed;z-index:9999;opacity:1;">
+        <img class = "preloader-img VCentered" src="/images/assets/svg-loaders/tail-spin.svg"/>
+    </section>
+    <nav class="navbar navbar-expand-md">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content">
+            <div id = "navIcon" onclick="animateBtn(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav " id = "navbar-content">
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Photography.</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact!</a>
+            </li>    
+          </ul>
+        </div>  
+    </nav>
+    <div class="wrapper">
+        <div class="landing-page page" id = "landing">
+            <div class = "container-fluid VCentered">
+                <div class = "row">               
+                    <div class = "col-sm-2"></div>
+                    <div class = "col-sm-8">
+                        <div class = "intro-container">
+                            <img class = "image-md landing-img" src = "/images/landing.jpg">
+                            <div class = "intro-heading">
+                                <h1 class = "intro-heading-en"><i>Hello.</i></h1>
+                                <h1 class = "intro-heading-ch"><span style = "color:#FFB300">你好。</span></h1>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class = "col-sm-2">
+                        <div class = "name-tag">
+                            <h1 class = "name-tag-en">钱龙翔,<br>Jimmy Qian</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id = "gallery"></a>
+        <section class = "gallery page">
+            <div class="row gallery-mainContent">
+                <!--id = "section-1" for inpage transition-->
+                <div class="col-sm-2"></div>
+                <div id = "portrait-section" class="gallery-section col-sm-5" style = "background:url('/images/Portrait/cover.jpg') center; background-size:cover">
+                    <div class="overlay" onclick = "storeName(this)">
+                        <h4 class = "overlay-title VCentered">Portraits</h4>
+                    </div>
+                </div>
+                <div id = "architecture-section" class="gallery-section col-sm-4" style = "background:url('/images/Urban/cover.jpg') center; background-size:cover">
+                    <div class="overlay" onclick = "storeName(this)">
+                        <h4 class = "overlay-title VCentered">Architectures</h4>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row gallery-subContent">
+                <div class="col-sm-1"></div>
+                <div id = "product-section" class="gallery-section col-sm-4" style = "background:url('/images/Product/cover.jpg') center; background-size:cover">
+                    <div class="overlay" onclick = "storeName(this)">
+                        <h4 class = "overlay-title VCentered">Products</h4>
+                    </div>
+                </div>
+                <div id = "interior-section" class="gallery-section col-sm-5" style = "background:url('/images/Interior/cover.jpg') center; background-size:cover">
+                    <div class="overlay" onclick = "storeName(this)">
+                        <h4 class = "overlay-title VCentered">Interiors</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class = "about page">
+            <div class="row VCentered">
+                <div class="col-sm-6">
+                    <div class="intro-heading">
+                        <h3 class = "intro-heading-en"><i>About.</i></h3>
+                        <h3 class = "intro-heading-ch"><span style = "color:#FFB300">个人简介。</span></h3>
+                    </div>  
+                </div>
+                <div class="col-sm-3">
+                    <div class="inner">
+                        <img id = "profile-img" class="img-fluid " src = "images/profile2.jpg"></img>
+                    </div>
+                    
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+    
+        </section>
+    </div>
+    <script>
+        window.onload = function(){
+            //alert("loaded");
+            $("#preloader").fadeOut(300);
+            
+        };
+    </script>
+    <!--Scrolling scripts-->
+    <script>
+        var mainSectionFlag = false;
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 200) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+        function animateBtn(x) {
+            x.classList.toggle("change");
+        }
+        window.setInterval(function(){
+            var galleryPos = $(".gallery").offset().top;
+            var winTop = $(window).scrollTop();
+            var c = 0;
+            //fade in delay for each section
+            if (galleryPos < winTop + 500 && mainSectionFlag == false){
+                $(".gallery-section").each(function(){
+                    $(this).css("opacity", "1");                
+                })
+            }
+        },500);
+      
+    </script>
+    <!--Page transition scripts-->
+    <script>
+        function pageTransition(element){
+            mainSectionFlag = true;
+            var overlay = $(element);
+            var parent = $(element).parent()
+            var parentID = parent.prop('id');
+            setMainSectionStyle(overlay, parent, parentID);
+            // Center main section by anchoring to section
+            var winTop = $(window).scrollTop();
+            centerMainSection(parentID);
+        }
+        //applying main section style
+        function setMainSectionStyle(overlay, parent, parentID){
+            overlay.css("opacity", "0");
+            parent.addClass("main-section " + parentID + "-center ");
+            $(".gallery-section:not(#" + parentID + ")" ).css("opacity", "0");
+        }
+        //scroll to main section anchor point
+        function centerMainSection(section){
+            if (section == "section-1" || section == "section-2"){
+                $(document).scrollTop($("#" + section).offset().top);
+            }
+            else if (section == "section-3" || section == "section-4"){
+                $(document).scrollTop($("#" + section).offset().top - $("#" + section).height());
+            }
+        }
+
+
+        function storeName(element){
+            var parent = $(element).parent();
+            var parentID = parent.prop("id");
+            //console.log(parentID);
+            window.localStorage.setItem('section', parentID);
+            window.location.href = "details.html";
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Longxiang Qian</title>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Sail|Poiret+one|Amaranth" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/main.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/navbar.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/gallery.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/galleryCarousel.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar-nav" data-offset="60">
+    <nav class="navbar navbar-expand-md">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content">
+            <div id = "navIcon" onclick="animateBtn(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav " id = "navbar-content">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>    
+          </ul>
+        </div>  
+    </nav>
+    <div class="landing-page page">
+        <div class = "container-fluid VCentered">
+            <div class = "row">               
+                <div class = "col-sm-2">
+                </div>
+                <div class = "col-sm-8">
+                    <div class = "intro-container">
+                        <img class = "image-md landing-img" src = "/images/landing.jpg">
+                        <div class = "intro-heading">
+                            <h1 class = "intro-heading-en"><i>Hello.</i></h1>
+                            <h1 class = "intro-heading-ch"><span style = "color:#FFB300">你好。</span></h1>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class = "col-sm-2">
+                    <div class = "name-tag">
+                        <h1 class = "name-tag-en">钱龙翔,<br>Jimmy Qian</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "gallery-page-1 page">
+        <div class = "container-fluid VCentered">
+            <div class = "row">
+                <div class = "col-sm-1"></div>
+                <div class = "col-sm-3">
+                    <div class = "gallery-1">
+                        <div class = "gallery-page page" style = "position:relative;">
+                                <div class = "scrollBtn">
+                                    <a class = "scrollButton" id = "scrollButton-1"><i class="fas fa-angle-double-left"></i></a>
+                                    <a class = "scrollButton" id = "scrollButton-2"><i class="fas fa-angle-double-right"></i></a>
+                                </div>
+                                <div class = "container-fluid VCentered">
+                                        <div class=" slider single-item" id = "gallery-1">
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-sm-8">
+                    <h1 class = "gallery-1-heading VCentered">
+                        <strong style = "color:blue;font-size:5vw;">Blue</strong> & <strong style = "color:cyan;font-size:5vw">Cyan</strong><br>
+                        Are Definitely One of My Fav Colors.
+                    </h1>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class = "gallery-page-2 page " id = "photography">
+            <div class = "container-fluid VCentered">
+                <div class = "row">
+                    <div class = "col-sm-8">
+                        <h1 class = "gallery-2-heading VCentered">
+                            A Few of My Favourite <u>Portrait</u><br>
+                            <strong style = "color:orange;font-size:7vw;">SHOTS!</strong>
+                        </h1>
+                    </div>
+                    <div class = "col-sm-3">
+                        <div class = "gallery-2">
+                            <img class = "img-fluid image-lg" src = "/images/2-0.jpg">
+                        </div>     
+                    </div>
+                    <div class = "col-sm-1"></div>
+                </div>
+            </div> 
+    </div>
+    <div class = "about-page page">
+            <div class = "container-fluid VCentered">
+                <div class = "row">
+                    <div class = "col-sm-2"> 
+                    </div>
+                    <div class = "col-sm-8">
+                        <div class = "about-me">
+                            <img class = "image-md img-fluid profile-image" src = "/images/profile.jpg">
+                        </div>
+                    </div>
+                    <div class = "col-sm-2">   
+                    </div>
+                </div>
+            </div> 
+    </div>
+    <div class="footer page slideanim">
+        <h1 class = "end-heading VCentered">The End.</h1>
+        <h4 class = "credit-text VCentered">© 2019 Spectre Visuals Studio</h4>
+    </div>
+    <script>
+        function animateBtn(x) {
+            x.classList.toggle("change");
+        }
+        var lastScrollTop = 0;
+            $(window).scroll(function(event){
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop){
+                if (!($('.navbar').is(":hover"))){
+                    setTimeout(300);
+                    $('.navbar').css("opacity","0");
+                }
+            }
+            //TOP
+            else if($(window).scrollTop() == 0){
+                $('.navbar').css('background','linear-gradient(135deg, rgba(0,176,255,0) 0%, rgba(46,255,185,0) 100%)');
+            } 
+            else {
+                $('.navbar').css("opacity","1");
+                $('.navbar').css('background',"linear-gradient(135deg, rgba(0,176,255,1) 0%, rgba(46,255,185,1) 100%)");
+            }
+            
+            lastScrollTop = st;
+        });
+    </script>
+    <script>
+        $(window).scroll(function() {
+        $(".slideanim").each(function(){
+            var pos = $(this).offset().top;
+
+            var winTop = $(window).scrollTop();
+            if (pos < winTop + 100) {
+            $(this).addClass("slide");
+            }
+        });
+        });
+    </script>
+    <!-- Gallery -->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="/lib/slick/slick.js" type = "text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).on('ready', function() {
+            $('.single-item').slick();
+            $( "#scrollButton-1" ).click(function() {
+                $('#gallery-1').slick('slickPrev');
+            });
+            $( "#scrollButton-2" ).click(function() {
+                $('#gallery-1').slick('slickNext');
+            });
+            
+        });
+        var imgList, element;
+        var jsonURL = "images.json";
+        var counter = 1;
+        $.getJSON(jsonURL, function(json){
+            imgList = "";
+            $.each(json.section, function(){
+                $.each(this.coverImage, function(){
+                    element = " <a href=''><img class = 'img-fluid image-lg' src = '" + this.url + "'></a>";
+                    $("#gallery-1").slick("slickAdd", element);
+                })
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+ @keyframes fadeUp{
+    0%{
+        opacity:1;
+        transform: translateY(-50%);
+    }
+    100%{
+        opacity:0;
+        transform: translateY(-70%);
+    }
+}
+.slide {
+/* The name of the animation */
+animation-name: slide;
+-webkit-animation-name: slide; 
+/* The duration of the animation */
+animation-duration: .6s; 
+-webkit-animation-duration: .6s;
+
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    } 
+}
+
+.expandWidth {
+    /* The name of the animation */
+    animation-name: expandWidth;
+    -webkit-animation-name: expandWidth; 
+    /* The duration of the animation */
+    animation-duration: .6s; 
+    -webkit-animation-duration: .6s;
+    /* Make the element visible */
+    visibility: visible; 
+}
