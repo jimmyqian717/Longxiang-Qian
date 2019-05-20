@@ -1,0 +1,155 @@
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+/* Style the header: fixed position (always stay at the top) */
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100vw;
+}
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100vw;
+  height: 8px;
+  background: transparent;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background-image: linear-gradient(to right, #a8edea 0%, #fed6e3 100%);
+  width: 0%;
+}
+*{
+    font-family: "Montserrat";
+    user-select: none;
+}
+body,html{
+  scroll-behavior: smooth;
+}
+.page{
+    height:100vh;
+    display:block;
+    position:relative;
+}
+.VCentered{
+    position: relative;
+    top:50%;
+    transform:translateY(-50%);
+}
+.HCentered{
+  position: relative;
+  left:50%;
+  transform:translateX(-50%);
+}
+.ACentered{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+.FCentered{
+  position: fixed;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+.d-block-c{
+    display:block;
+    margin:0 auto;
+}
+.overlay{
+    position: absolute;
+    background-color:#060606;
+    opacity: 0;
+    height:100%;
+    width:100%;
+    z-index: 99;
+    top:0;
+    left:0;
+    transition:.3s ease;
+}
+.overlay:hover{
+    opacity:.4;
+}
+.overlay-title{
+  font-size:4vw;
+  display:block;
+  color:white;
+  font-weight: 600;
+  text-align: center;
+}
+.row, [class*="col-sm"]{
+    margin:0;
+    padding:0;
+}
+.main-page-row{
+  height:80vh;
+}
+.preloader-img{
+  width:10vw;
+  display:block; 
+  margin:0 auto;
+}
+.inner{
+  overflow:hidden
+}
+#landing-image{
+  width:45%;
+  margin-left:3vw
+}
+#landing-heading2{
+  font-family: 'Mrs Sheppards', cursive;
+  position: absolute;
+  top:-10%;
+  left:45%;
+  transform:translateX(-50%) rotate(-18deg);
+  font-size:13vw;
+  font-weight:600;
+  letter-spacing:8px;
+  background: -webkit-linear-gradient(30deg, #ff5858, #f09819);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fadeUpImage{
+  opacity:0;
+  transform:translate(-50%, -10%);
+  transition:.4s ease-in-out
+}
+.fadeUpHeading{
+  opacity:0;
+  transform:translateY(-20%);
+  transition:.4s ease-in-out
+}
+#landing-heading{
+  position: absolute;
+  top:50%;
+  right:4vw;
+  transform:translateY(-50%);
+  font-size:4.5vw;
+  color:transparent;
+  font-weight:600;
+  -webkit-text-stroke: 2px black;
+}
+
+@media only screen and (max-width: 576px) {
+  .preloader-img{
+    width:200px;
+    display:block; 
+    margin:0 auto;
+  }
+  #landing-image{
+    width:70%;
+  }
+  #landing-heading2{
+    left:50%;
+    font-size:130px; 
+  }
+
+}
+@media only screen and (min-width: 768px) {
+
+}

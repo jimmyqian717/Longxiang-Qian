@@ -1,0 +1,95 @@
+{
+    "section":{
+        "section-1":{
+            "gallery" : "urban",
+            "title" : "Streetshots",
+            "nImages" : "12",
+            "images":[
+                {
+                    "title" : "Image-1",
+                    "url" : "/images/Urban/urban-1.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-2",
+                    "url" : "/images/Urban/urban-2.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-3",
+                    "url" : "/images/Urban/urban-3.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-4",
+                    "url" : "/images/Urban/urban-4.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-5",
+                    "url" : "/images/Urban/urban-5.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-1",
+                    "url" : "/images/Urban/urban-6.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-1",
+                    "url" : "/images/Urban/urban-7.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-1",
+                    "url" : "/images/Urban/urban-8.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-1",
+                    "url" : "/images/Urban/urban-9.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-1",
+                    "url" : "/images/Urban/urban-10.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-1",
+                    "url" : "/images/Urban/urban-11.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-1",
+                    "url" : "/images/Urban/urban-12.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                }
+            ]
+        }
+    }
+}

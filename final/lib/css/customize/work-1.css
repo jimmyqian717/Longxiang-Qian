@@ -1,0 +1,86 @@
+
+/* Style the header: fixed position (always stay at the top) */
+.header {
+    z-index: 9;
+    width: 80%;
+    background-color: transparent;
+  }
+  
+  /* The progress container (grey background) */
+  .progress-container {
+    width: 90%;
+    height: 5px;
+    background: transparent;
+  }
+  
+  /* The progress bar (scroll indicator) */
+  .progress-bar {
+    height: 5px;
+    background: #FF6F00;
+    width: 0%;
+  }
+
+.work-overlay{
+position: relative;
+height:18vw;
+width:18vw;
+}
+#work-banner-1{
+    position: relative;
+    object-fit: cover;
+    height:18vw;
+    width:18vw;
+}
+.work-heading{
+    font-size:2.5vw;
+    color:transparent;
+    font-weight:600;
+    -webkit-text-stroke: 1px #FF6F00;
+    z-index: 99;
+}
+.work-content{
+    margin-top:50vh;
+}
+.work-content-row{
+    margin:10vh 0;
+}
+div[class^="col-sm-"] {
+    overflow: hidden;
+}
+.work-image{
+    transition: .2s ease-in-out;
+    cursor: pointer
+}
+.work-image:hover{
+    transform: scale(1.01)
+}
+@media only screen and (min-width: 577px) {
+  
+}
+@media only screen and (max-width: 576px) {
+    .work-overlay{
+        height:250px;
+        width:250px;
+    }
+    #work-banner-1{
+        height:250px;
+        width:250px;
+    }
+    .work-heading{
+        font-size:34px;
+        letter-spacing: 2px;
+        color:transparent;
+        font-weight:600;
+        -webkit-text-stroke: 1px #FF6F00;
+        z-index: 99;
+    }
+    .work-content{
+        margin:340px 30px;
+    }
+    .work-content-row{
+        margin:0;
+    }
+    div[class^="col-sm-"]{
+        margin:20px 0;
+    }
+}

@@ -1,0 +1,74 @@
+@media only screen and (min-width: 768px) {
+    .image-lg{
+        max-width:100%;
+    }
+    .image-md{
+        max-width:36%;
+        height: auto;
+    }
+    .fadeUp{
+        opacity:0;
+        width:30vw;
+    }
+    .fadeIn{
+        opacity:1;
+        width:70vw;
+    }
+    .gallery{
+        height:auto;
+        overflow: auto
+    }
+    .gallery-section{
+        height:auto;
+        overflow: auto
+    }
+    .anchor{
+        width:100vw;
+        height:1px;
+        display:block
+    }
+    #urban-banner{
+        margin-top:30vh;
+        height:50vh;
+        background: linear-gradient(180deg, rgba(74,146,139,1) 0%, #ECECEC 100%);
+        background-attachment: fixed;
+    }
+    #urban-banner-image{
+        position:absolute;
+        top:-30vh;
+        height:80vh;
+    }
+    
+    .image{
+        transition:.2s ease-out;
+        position:relative;
+    }
+    .image-overlay{
+        height:100%;
+        width:100%;
+        background-color:black;
+        position:absolute;
+        top:0;
+        left:0;
+        opacity:0;
+        transition: .2s ease-out;
+    }
+    .image-overlay:hover{
+        opacity:.6;
+    }
+    .overlay-container{
+        width:100%;
+        height:auto;
+        color:white
+    }
+    .overlay-heading{
+        font-size: 2vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+
+

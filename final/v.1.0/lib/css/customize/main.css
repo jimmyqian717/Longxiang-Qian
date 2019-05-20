@@ -1,0 +1,185 @@
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+/* Style the header: fixed position (always stay at the top) */
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100vw;
+}
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100vw;
+  height: 8px;
+  background: transparent;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background-image: linear-gradient(to right, #a8edea 0%, #fed6e3 100%);
+  width: 0%;
+}
+*{
+    font-family: "Montserrat";
+    user-select: none;
+}
+body,html{
+  scroll-behavior: smooth;
+}
+.page{
+    height:100vh;
+    display:block;
+    position:relative;
+}
+.VCentered{
+    position: relative;
+    top:50%;
+    transform:translateY(-50%);
+}
+.d-block-centered{
+    display:block;
+    margin:0 auto;
+}
+.overlay{
+    position: absolute;
+    background-color:#060606;
+    opacity: 0;
+    height:100%;
+    width:100%;
+    z-index: 99;
+    top:0;
+    left:0;
+    transition:.3s ease;
+}
+.overlay:hover{
+    opacity:.4;
+}
+.overlay-title{
+  font-size:4vw;
+  display:block;
+  color:white;
+  font-weight: 600;
+  text-align: center;
+}
+.row, [class*="col-sm"]{
+    margin:0;
+    padding:0;
+}
+.main-page-row{
+  height:80vh;
+}
+.preloader-img{
+  width:10vw;
+  display:block; 
+  margin:0 auto;
+}
+.inner{
+  overflow:hidden
+}
+
+.shape-nav-container{
+  display:block;
+  width:auto;
+  margin:0 auto;
+}
+@media only screen and (min-width: 768px) {
+  .name-tag{
+    position: absolute;
+    bottom:10vh;
+  }
+  .name-tag h1{
+    font-size:20px;
+    color:#262626;
+    font-weight: 100;
+    margin:0 auto;
+    text-align: right;
+    font-weight: 500;
+  }
+
+  .intro-heading{
+    color:#262626;
+    position: absolute;
+    bottom:0;
+    left:4vw;
+  }
+  .intro-heading-en, .intro-heading-ch{
+    font-size:4vw;
+    font-weight:bold;
+    margin:0;
+    bottom:0;
+  }
+  .nav-label{
+    position:absolute;
+    color:black;
+    font-size:1.5vw;
+    font-weight:100;
+    width:25vw;
+    z-index:99;
+    cursor:url("/images/assets/cursor1.png"),cell;
+    font-family: 'Montserrat Alternates', sans-serif;
+  }
+  #portrait-label{
+    transform:translate(8vw, -15vh);
+  }
+  #urban-label{
+    transform:translate(35vw, 22vh)
+  }
+  #inp-label{
+    transform:translate(45vw, -30vh)
+  }
+  #portrait-label::after, #urban-label::after, #inp-label::after{
+    content:"";
+    opacity:.8;
+    z-index: -9;
+    transition:.2s ease-out;
+    display:block;
+    position:absolute;
+    transform:translateZ(0) scale(1.0, 1.0);
+    -webkit-backface-visibility: hidden;
+  }
+  #portrait-label::after{
+    width: 22vw;
+    height: 14vw;
+    transform:translate(0vw, -12vh);
+    -webkit-clip-path: ellipse(40% 50% at 50% 50%);
+    clip-path: ellipse(40% 50% at 50% 50%);
+    background: rgb(73,50,138);
+    background: linear-gradient(-90deg, rgba(73,50,138,1) 10%, rgba(255,255,255,1) 100%);
+  }
+  #urban-label::after{
+    width: 17vw;
+    height: 17vw;
+    transform:translate(-7vw, -25vh) rotate(120deg) ;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    background: linear-gradient(60deg, rgba(74,146,139,1) 10%, rgba(255,255,255,1) 100%);
+  }
+  #inp-label::after{
+    width: 30vw;
+    height: 20vw;
+    transform:translate(-18vw, -10vh);
+    -webkit-clip-path: polygon(100% 0, 0 0, 100% 79%);
+    clip-path: polygon(100% 0, 0 0, 100% 79%);
+    background: rgb(255,255,255);
+    background: linear-gradient(135deg, rgba(138,50,83,1) 10% ,rgba(255,255,255,1) 100%);
+  }
+  #portrait-label:hover:after,  #urban-label:hover:after,  #inp-label:hover:after{
+    opacity:1;
+  }
+  .nav-label{
+    position:absolute
+  }
+  #profile-img{
+    transition:.3s ease-in-out;
+    transform:scale(1);
+    cursor: pointer;
+  }
+  #profile-img:hover{
+    transform: scale(1.05);
+  }
+
+}

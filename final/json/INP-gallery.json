@@ -1,0 +1,67 @@
+{
+    "section":{
+        "section-1":{
+            "gallery" : "inp",
+            "title" : "Interiors & Products",
+            "nImages" : "8",
+            "images":[
+                {
+                    "title" : "Image-1",
+                    "url" : "/images/INP/INP-1.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-2",
+                    "url" : "/images/INP/INP-2.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-3",
+                    "url" : "/images/INP/INP-3.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-4",
+                    "url" : "/images/INP/INP-4.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-5",
+                    "url" : "/images/INP/INP-5.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-1",
+                    "url" : "/images/INP/INP-6.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-1",
+                    "url" : "/images/INP/INP-7.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                },
+                {
+                    "title" : "Image-1",
+                    "url" : "/images/INP/INP-8.jpg",
+                    "themeColor": "#ffffff",
+                    "description" : "Hello world",
+                    "orientation" : "portrait"
+                }
+            ]
+        }
+    }
+}

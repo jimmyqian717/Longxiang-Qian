@@ -1,0 +1,57 @@
+.navbar{
+    height:10vh;
+}
+.nav-item a{
+    opacity:1;
+    color:black;
+    font-weight:600;
+    font-size: .9vw;
+    transition:.2s ease-out
+}
+.nav-item a:hover{
+    opacity:1
+}
+.nav-item:hover, .nav-item:focus, .nav-item:active{
+    outline:none;
+}
+
+.navbar-toggler:hover, .navbar-toggler:focus, .navbar-toggler:active{
+    outline:none;
+}
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: transparent;
+    margin: 6px 0;
+    transition: 0.4s;
+    border-radius: 2px;
+    border:1px solid black;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+@media only screen and (max-width: 576px) {
+    .nav-item a{
+        font-size:50px;
+    }
+}

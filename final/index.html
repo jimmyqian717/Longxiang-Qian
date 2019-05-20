@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Longxiang Qian</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Mrs+Sheppards|Dr+Sugiyama" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/main.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/navbar.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/work-1.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+    <section id = "preloader" style = "height:100vh; width:100vw; background-color:black;position:fixed;z-index:9999;opacity:1;">
+        <img class = "preloader-img VCentered" src="/images/assets/svg-loaders/hearts.svg"/>
+    </section>
+    <nav class="navbar navbar-expand-md fixed-top">
+        
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <div class="container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </button>
+        
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#">Work</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#">Contact</a>
+                </li> 
+            </ul>
+        </div> 
+    </nav>
+    <section id="home-section" class = "page">
+        <div class="row VCentered h-100">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 h-100">
+                <div id = "landing-container" class="VCentered">
+                    <img id = "landing-image" src="/images/banner/landing.jpg" class="VCentered img-fluid HCentered">
+                    <h1 id = "landing-heading2" class = "">Hello.</h1>
+                </div>
+            </div>
+            <div class="col-sm-3 fixed-bottom">
+                <button id = "continue-btn" class = "btn btn-primary">CLick me</button>
+            </div>
+        </div>
+    
+    </section>
+    <section id = "work-photography" class = "page">
+        <div class = "work-overlay d-block-c VCentered">
+            <img id = "work-banner-1" class="img-fluid d-block-c" src = "/images/banner/work-banner-1.jpg">
+            <h4 id = "work-heading-1"  class = "work-heading text-center ACentered">Portraits</h4>
+            <div class="header FCentered">
+                <div class="progress-container FCentered">
+                    <div class="progress-bar FCentered" id="myBar"></div>
+                </div> 
+            </div>
+        </div>
+        <div class = "work-content">
+            <div class="row work-content-row">
+                <div class = "col-sm-3 mx-auto mt-5 mb-5">
+                    <img class = "work-image img-fluid" src="/images/portraits/portraits-1.jpg" alt="">
+                </div>
+                <div class = "col-sm-3 mx-auto mt-5 mb-5">
+                    <img class = "work-image img-fluid" src="/images/portraits/portraits-16.jpg" alt="">
+                </div>
+                <div class = "col-sm-3 mx-auto mt-5 mb-5">
+                    <img class = "work-image img-fluid" src="/images/portraits/portraits-17.jpg" alt="">
+                </div>
+                <div class = "col-sm-10 mx-auto">
+                    <img class = "work-image img-fluid" src="/images/portraits/portraits-13.jpg" alt="">
+                </div>
+                <div class = "col-sm-3 mx-auto mt-5 mb-5">
+                        <img class = "work-image img-fluid" src="/images/portraits/portraits-1.jpg" alt="">
+                </div>
+                <div class = "col-sm-3 mx-auto mt-5 mb-5">
+                    <img class = "work-image img-fluid" src="/images/portraits/portraits-16.jpg" alt="">
+                </div>
+                <div class = "col-sm-3 mx-auto mt-5 mb-5">
+                    <img class = "work-image img-fluid" src="/images/portraits/portraits-17.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        //Pre-loader
+        window.onload = function(){
+            //alert("loaded");
+            $("#preloader").fadeOut(300);
+            
+        };
+    </script>
+    <script>
+    </script>
+    <!--Scrolling script-->
+    <script>
+        // When the user scrolls the page, execute myFunction 
+        window.onscroll = function() {myFunction()};
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+
+        //Button scroll
+        $("#continue-btn").click(function(){
+            $("body").css("overflow","scroll");
+            $("#landing-image").toggleClass("fadeUpImage");
+            $("#landing-heading2").toggleClass("fadeUpHeading");
+            // $([document.documentElement, document.body]).animate({
+            //     scrollTop: $("#work-photography").offset().top
+            // }, 500);
+        })
+        // On scroll nav fade
+        var lastScrollTop = 0;
+            $(window).scroll(function(event){
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop){
+                $(".navbar").fadeOut("fast");
+            } else {
+                // upscroll code
+                $(".navbar").fadeIn("fast");
+            }
+            lastScrollTop = st;
+        });
+    </script>
+</body>
+</html>

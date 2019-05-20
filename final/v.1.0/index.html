@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Longxiang Qian</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Mrs+Sheppards|Dr+Sugiyama|Freckle+Face|Montserrat+Alternates" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/main.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/navbar.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/gallery.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/animation.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+<body data-spy="scroll" data-target=".navbar-nav" data-offset="60">
+    <section id = "preloader" style = "height:100vh; width:100vw; background-color:black;position:fixed;z-index:9999;opacity:1;">
+        <img class = "preloader-img VCentered" src="/images/assets/svg-loaders/tail-spin.svg"/>
+    </section>
+    <nav class="navbar navbar-expand-md">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content">
+            <div id = "navIcon" onclick="animateBtn(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav " id = "navbar-content">
+            <li class="nav-item">
+                <a class="nav-link" href="#gallery">Home.</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Photography*</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact!</a>
+            </li>    
+          </ul>
+        </div>  
+    </nav>
+    
+    <div class="wrapper">
+        <div class="header">
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div> 
+        </div>
+        <div id = "landing-page" class="page" id = "landing">
+            <div class = "container-fluid VCentered" style = "padding:0;">
+                <div class = "row main-page-row">               
+                    <div class = "col-sm-2">
+                        <div class = "intro-container">
+                            <div class = "intro-heading">
+                                <h1 class = "intro-heading-en"><i>Hello.</i></h1>
+                                <h1 class = "intro-heading-ch">你好。</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class = "shape-nav-container VCentered">
+                            <a href = "#portrait-anchor"><h4 class="display-4 nav-label VCentered" id = "portrait-label">Portraits</h4></a>
+                            <a href = "#urban-anchor"><h4 class="display-4 nav-label VCentered" id = "urban-label">Urban & Streets</h4></a>
+                            <a href = "#inp-anchor"><h4 class="display-4 nav-label VCentered" id = "inp-label">Interiors & Products</h4></a>
+                        </div>
+                    </div>
+                    <div class = "col-sm-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id = "Photography"></a>
+        <section class = "gallery">
+            <a id = "urban-anchor" class = "anchor"></a>
+            <div id = "urban-section" class = "gallery-section">
+                <div id = "urban-banner" class="row banner">
+                    <div class="col-1"></div>
+                    <div class="col-6">
+                        <img id = "urban-banner-image" src="/images/Urban/urban-header.png" alt="">
+                    </div>
+                    <div class="col-5">
+                        <h4 id = "urban-banner-title" class = "VCentered display-4 "></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id = "urban-gallery" class="row">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id = "portraits-section" class = "gallery-section">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id = "portraits-gallery" class="row">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        window.onload = function(){
+            //alert("loaded");
+            $("#preloader").fadeOut(300);
+            
+        };
+    </script>
+    <!--Scrolling scripts-->
+    <script>
+        var mainSectionFlag = false;
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 200) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+        function animateBtn(x) {
+            x.classList.toggle("change");
+        }
+        /*window.setInterval(function(){
+            var galleryPos = $(".gallery").offset().top;
+            var winTop = $(window).scrollTop();
+            var c = 0;
+            //fade in delay for each section
+            if (galleryPos < winTop + 500 && mainSectionFlag == false){
+                $(".gallery-section").each(function(){
+                    $(this).css("opacity", "1");                
+                })
+            }
+        },500);*/
+      
+
+      // Scrolling indicator
+        window.onscroll = function() {myFunction()};
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+    <!--Page transition scripts-->
+    <script>
+        function pageTransition(element){
+            mainSectionFlag = true;
+            var overlay = $(element);
+            var parent = $(element).parent()
+            var parentID = parent.prop('id');
+            setMainSectionStyle(overlay, parent, parentID);
+            // Center main section by anchoring to section
+            var winTop = $(window).scrollTop();
+            centerMainSection(parentID);
+        }
+        //applying main section style
+        function setMainSectionStyle(overlay, parent, parentID){
+            overlay.css("opacity", "0");
+            parent.addClass("main-section " + parentID + "-center ");
+            $(".gallery-section:not(#" + parentID + ")" ).css("opacity", "0");
+        }
+        //scroll to main section anchor point
+        function centerMainSection(section){
+            if (section == "section-1" || section == "section-2"){
+                $(document).scrollTop($("#" + section).offset().top);
+            }
+            else if (section == "section-3" || section == "section-4"){
+                $(document).scrollTop($("#" + section).offset().top - $("#" + section).height());
+            }
+        }
+
+
+        function storeName(element){
+            var parent = $(element).parent();
+            var parentID = parent.prop("id");
+            //console.log(parentID);
+            window.localStorage.setItem('section', parentID);
+            window.location.href = "details.html";
+        }
+    </script>
+    <script>
+        // Dynamically load images from JSON
+        $(document).ready(function(){
+            var jsonFiles = ["urban-gallery.json", "INP-gallery.json", "portraits-gallery.json"];
+            var counter = 1;
+            $.each(jsonFiles, function(){
+                $.getJSON(this, function(json){
+                    $.each(json.section, function(){
+                        var galleryName = this.gallery;
+                        var galleryTitle = this.title;
+                        // Set gallery banner title
+                        setTitle(galleryName, galleryTitle);
+                        $.each(this.images, function(){
+                            // Insert i,ahes
+                            insertImage(this, galleryName, galleryTitle);
+                        });
+                    });
+                });
+            })
+           
+        });
+        // Insert image to corresponding gallery section
+        function insertImage(image, galleryName, galleryTitle){
+            var col = 0;
+            var margin = "0";
+            var galleryID = "#" + galleryName + "-gallery";
+            
+            if (image.orientation == "portrait"){
+                    col = 3;
+                    //margin = "margin:2vh 4.16vw;";
+                }
+            else{
+                col = 6;
+                margin = "none"
+            }
+            var element = "<div class = 'image col-sm-" + col + "' style = '" + margin + "'>\
+                <img class = 'gallery-image img-fluid' src = '" + image.url + "'>\
+                    <div class = 'image-overlay'>\
+                        <div class = 'overlay-container VCentered text-center'>\
+                        <h4 class = 'overlay-heading'>" + image.title +"</h4>\
+                        <p class = 'overlay-text'>" + image.description +"</p>\
+                        </div>\
+                    </div>\
+                </div>";
+            $(galleryID).append(element);
+
+        }
+        // Setting gallery title
+        function setTitle(galleryName,galleryTitle){
+            var bannerTitleID = "#" + galleryName + "-banner-title";
+            $(bannerTitleID).text(galleryTitle);
+            console.log(bannerTitleID, galleryTitle);
+        }
+    </script>
+    
+</body>
+</html>
