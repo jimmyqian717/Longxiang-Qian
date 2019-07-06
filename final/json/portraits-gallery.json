@@ -1,121 +1,137 @@
 {
     "section":{
         "section-1":{
-            "gallery" : "portraits",
+            "section_title" : "portraits",
             "title" : "Portraits",
             "nImages" : "6",
             "images":[
                 {
                     "title" : "Image-1",
-                    "url" : "/images/portraits/portraits-1.jpg",
+                    "url" : "/images/portraits/ports-01.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-2",
-                    "url" : "/images/portraits/portraits-2.jpg",
+                    "url" : "/images/portraits/ports-02.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-3",
-                    "url" : "/images/portraits/portraits-3.jpg",
+                    "url" : "/images/portraits/ports-03.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-4",
-                    "url" : "/images/portraits/portraits-4.jpg",
+                    "url" : "/images/portraits/ports-04.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-5",
-                    "url" : "/images/portraits/portraits-5.jpg",
+                    "url" : "/images/portraits/ports-05.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-1",
-                    "url" : "/images/portraits/portraits-6.jpg",
+                    "url" : "/images/portraits/ports-06.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-1",
-                    "url" : "/images/portraits/portraits-7.jpg",
+                    "url" : "/images/portraits/ports-07.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-1",
-                    "url" : "/images/portraits/portraits-8.jpg",
+                    "url" : "/images/portraits/ports-08.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-1",
-                    "url" : "/images/portraits/portraits-9.jpg",
+                    "url" : "/images/portraits/ports-09.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-1",
-                    "url" : "/images/portraits/portraits-10.jpg",
+                    "url" : "/images/portraits/ports-10.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-1",
-                    "url" : "/images/portraits/portraits-11.jpg",
+                    "url" : "/images/portraits/ports-11.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-1",
-                    "url" : "/images/portraits/portraits-12.jpg",
+                    "url" : "/images/portraits/ports-12.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-1",
-                    "url" : "/images/portraits/portraits-13.jpg",
+                    "url" : "/images/portraits/ports-13.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "landscape"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-1",
-                    "url" : "/images/portraits/portraits-14.jpg",
+                    "url" : "/images/portraits/ports-14.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "landscape"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-1",
-                    "url" : "/images/portraits/portraits-15.jpg",
+                    "url" : "/images/portraits/ports-15.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 },
                 {
                     "title" : "Image-1",
-                    "url" : "/images/portraits/portraits-16.jpg",
+                    "url" : "/images/portraits/ports-16.jpg",
                     "themeColor": "#ffffff",
                     "description" : "Hello world",
-                    "orientation" : "portrait"
+                    "orientation" : "portrait",
+                    "column" : "3"
                 }
             ]
         }

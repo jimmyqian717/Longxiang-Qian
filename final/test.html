@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Longxiang Qian</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Mrs+Sheppards~Dr+Sugiyama" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/> 
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/main.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/navbar.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/work-1.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/contact.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/lib/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/lib/slick/slick-theme.css"/>
+</head>
+<body>
+    <section id = "preloader" style = "height:100vh; width:100vw; background-color:black;position:fixed;z-index:9999;opacity:1;">
+        <img class = "preloader-img VCentered" src="/images/assets/svg-loaders/hearts.svg"/>
+    </section>
+    <nav class="navbar navbar-expand-md fixed-top">
+        
+        <!-- Toggler/collapsibe Button -->   
+        <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <div class="container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#work-section">Work</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#about-section">About</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#contact-section">Contact</a>
+                </li> 
+            </ul>
+        </div> 
+    </nav>
+
+    <section id="home-section" class = "page" style = "overflow:scroll">
+        <div class="row VCentered h-100">
+            <div class="col-sm-1">
+                
+            </div>
+            <div class="col-sm-10 h-100">
+                <div id = "landing-container" class="VCentered">
+                    <p id = "landing-text">
+                        My name is <span class = "highlight-text">Jimmy</span><br>
+                        I'm a <span class = "highlight-text">Portrait Photographer</span><br>
+                        Based in <span class = "highlight-text">Eindhoven, NL</span>
+                    </p>
+                    <img id = "landing-image" src="/images/banner/landing.jpg" class="VCentered img-fluid HCentered">
+                    <h1 id = "landing-heading" class = "">Hello.</h1>
+                </div>
+            </div>
+            <div class="col-sm-1 fixed-bottom">
+            </div>
+        </div>
+    </section>
+    <section id = "work-section" class = "page">
+        <div class = "work-overlay d-block-c VCentered">
+            <img id = "work-banner-1" class="img-fluid d-block-c" src = "/images/banner/work-banner-1.jpg">
+            <h4 id = "work-heading-1"  class = "work-heading text-center ACentered">Photography</h4>
+            <div class="header FCentered">
+                <div class="progress-container FCentered">
+                    <div class="progress-bar FCentered" id="myBar"></div>
+                </div> 
+            </div>
+        </div>
+    </section>
+    <div class = "work-content page">
+        <div class="row work-content-row VCentered">
+            <div id = "inp-subsection" class="col-sm-3 mx-auto work-gallery">
+                <img class = 'img-fluid work-img' src = '/images/INP/INP-02.jpg'>
+                
+            </div>
+            <div id = "portraits-subsection" class=" col-sm-3 mx-auto work-gallery">
+                <img class = 'img-fluid work-img' src = '/images/portraits/ports-01.jpg'>
+            </div>
+            <div id = "urban-subsection" class="col-sm-3 mx-auto work-gallery">
+                <img class = 'img-fluid work-img' src = '/images/urban/urban-01.jpg'>
+            </div>
+        </div>
+    </div>
+
+
+
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="lib/slick/slick.min.js"></script>
+    <script>
+        //nav button animation
+        function myFunction(x) {
+            x.classList.toggle("change");
+        }
+        //Pre-loader
+        window.onload = function(){
+            //alert("loaded");
+            $("#preloader").fadeOut(300);
+        };
+
+        $("#portraits-subsection").hover(function(){
+            // $(this).toggleClass("autoplay");
+        });
+
+        $(document).ready(function(){
+            $('.autoplay').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                speed:50,
+                cssEase: 'snap',
+                autoplay: true,
+                autoplaySpeed:50,
+            });
+                    
+            $('.center').slick({
+                dots: true,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                    },
+                    {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        dots:false,
+                    }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots:false,
+                    }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+            });
+        });
+        var imgList, element;
+        var counter = 1;
+        var id;
+        var jsonList = ["/json/portraits-gallery.json","/json/urban-gallery.json"];
+        $.each(jsonList, function(index){
+            $.getJSON(jsonList[index], function(json){
+                imgList = "";
+                $.each(json.section, function(){
+                    var section_title = this.section_title;
+                    $.each(this.images, function(){
+                        //console.log(this.url.substring(8,this.url.length));
+                        id = this.url.substring(8, this.url.length - 4);
+                        element = "<img class = 'img-fluid work-img' src = '" + this.url + "'>";
+                        // console.log(element);
+                        $("#" + section_title + "-subsection").slick("slickAdd", element);
+                    })
+                });
+            })
+        })
+    
+        
+    </script>
+    <script>
+    </script>
+    <!--Scrolling script-->
+    <script>
+        // When the user scrolls the page, execute myFunction 
+        window.onscroll = function() {myFunction()};
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+
+        // On scroll nav fade
+        var lastScrollTop = 0;
+            $(window).scroll(function(event){
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop){
+                $(".navbar").fadeOut("fast");
+            } else {
+                // upscroll code
+                $(".navbar").fadeIn("fast");
+            }
+            lastScrollTop = st;
+        });
+
+
+    </script>
+    <!--Content loading script-->
+    <script>
+        // // Dynamically load images from JSON
+        // $(document).ready(function(){
+        //     var jsonFiles = "/json/portraits-gallery.json";
+        //     $.getJSON(jsonFiles, function(json){
+        //         $.each(json.section, function(){
+
+        //             $.each(this.images, function(){
+        //                 // Insert i,ahes
+        //                 insertImage(this);
+        //             });
+        //         });
+        //     });
+        // });
+        
+        // // Insert image to corresponding gallery section
+        // function insertImage(image){
+        //     var col = image.column;
+        //     var margin = "0";
+        //     var galleryID = "#photography-section";
+
+        //     var element = " <div class = 'col-sm-" + col + " mx-auto'>\
+        //         <img class = 'work-image img-fluid' src='" + image.url + "'>\
+        //     </div>";
+
+           
+        //     $(galleryID).append(element);
+
+        // }
+    </script>
+</body>
+</html>

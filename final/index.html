@@ -7,146 +7,348 @@
     <title>Longxiang Qian</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Mrs+Sheppards|Dr+Sugiyama" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/> 
     <link rel="stylesheet" type="text/css" href="lib/css/customize/main.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/customize/navbar.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/customize/work-1.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/navbar2.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/contact2.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/components.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/lib/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/lib/slick/slick-theme.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="/lib/css/customize/animate.css"/> -->
+    <link href="https://fonts.googleapis.com/css?family=Prata|Oswald|Abril+Fatface|&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section id = "preloader" style = "height:100vh; width:100vw; background-color:black;position:fixed;z-index:9999;opacity:1;">
-        <img class = "preloader-img VCentered" src="/images/assets/svg-loaders/hearts.svg"/>
-    </section>
-    <nav class="navbar navbar-expand-md fixed-top">
-        
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <div class="container" onclick="myFunction(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-        </button>
-        
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item mx-3">
-                    <a class="nav-link" href="#">Work</a>
+    <!-- <section id = "preloader">
+        <img class = "preloader-img VCentered" src="images/assets/svg-loaders/hearts.svg"/>
+    </section> -->
+    <a id = "nav-brand" href="#logo">Longxiang Qian</a>
+    <nav class="navbar navbar-expand-sm">
+        <div class="col-sm-10 mx-auto nav-container">
+            <ul class="navbar-nav VCentered">
+                <li class="nav-item">
+                    <a class="nav-link VCentered active-nav-item" data-section = "portraits" href="#gallery" onclick="loadSection(this)" tabindex="-1">PORTRAITS</a>
                 </li>
-                <li class="nav-item mx-3">
-                    <a class="nav-link" href="#">About</a>
+                <li class="nav-item">
+                    <a class="nav-link VCentered" data-section = "streets" href="#gallery" onclick="loadSection(this)" tabindex="-1">STREETS</a>
                 </li>
-                <li class="nav-item mx-3">
-                    <a class="nav-link" href="#">Contact</a>
-                </li> 
+                <li class="nav-item">
+                    <a class="nav-link VCentered" data-section = "others" href="#gallery" onclick="loadSection(this)" tabindex="-1">OTHERS</a>
+                </li>
+                <li id = "contact-nav-item" class="nav-item">
+                    <a class="nav-link VCentered" href = "#contact">Contact</a>
+                </li>
             </ul>
-        </div> 
+            <!-- Mobile black overlay -->
+            <div class="nav-overlay"></div>
+        </div>
     </nav>
-    <section id="home-section" class = "page">
-        <div class="row VCentered h-100">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6 h-100">
-                <div id = "landing-container" class="VCentered">
-                    <img id = "landing-image" src="/images/banner/landing.jpg" class="VCentered img-fluid HCentered">
-                    <h1 id = "landing-heading2" class = "">Hello.</h1>
-                </div>
+    <div class = "" id = "nav-button" onclick="animateBtn(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+    <section class="page" id = "gallery">
+        <div class="row VCentered gallery-row">
+            <div class="col-sm-1"><button id = "prev-btn" class = "scroll-btn VCentered float-right"><i class="fas fa-chevron-left"></i></button></div>
+            <div class="col-sm-10">
+                <div class="responsive gallery VCentered"></div>
             </div>
-            <div class="col-sm-3 fixed-bottom">
-                <button id = "continue-btn" class = "btn btn-primary">CLick me</button>
-            </div>
-        </div>
-    
-    </section>
-    <section id = "work-photography" class = "page">
-        <div class = "work-overlay d-block-c VCentered">
-            <img id = "work-banner-1" class="img-fluid d-block-c" src = "/images/banner/work-banner-1.jpg">
-            <h4 id = "work-heading-1"  class = "work-heading text-center ACentered">Portraits</h4>
-            <div class="header FCentered">
-                <div class="progress-container FCentered">
-                    <div class="progress-bar FCentered" id="myBar"></div>
-                </div> 
-            </div>
-        </div>
-        <div class = "work-content">
-            <div class="row work-content-row">
-                <div class = "col-sm-3 mx-auto mt-5 mb-5">
-                    <img class = "work-image img-fluid" src="/images/portraits/portraits-1.jpg" alt="">
-                </div>
-                <div class = "col-sm-3 mx-auto mt-5 mb-5">
-                    <img class = "work-image img-fluid" src="/images/portraits/portraits-16.jpg" alt="">
-                </div>
-                <div class = "col-sm-3 mx-auto mt-5 mb-5">
-                    <img class = "work-image img-fluid" src="/images/portraits/portraits-17.jpg" alt="">
-                </div>
-                <div class = "col-sm-10 mx-auto">
-                    <img class = "work-image img-fluid" src="/images/portraits/portraits-13.jpg" alt="">
-                </div>
-                <div class = "col-sm-3 mx-auto mt-5 mb-5">
-                        <img class = "work-image img-fluid" src="/images/portraits/portraits-1.jpg" alt="">
-                </div>
-                <div class = "col-sm-3 mx-auto mt-5 mb-5">
-                    <img class = "work-image img-fluid" src="/images/portraits/portraits-16.jpg" alt="">
-                </div>
-                <div class = "col-sm-3 mx-auto mt-5 mb-5">
-                    <img class = "work-image img-fluid" src="/images/portraits/portraits-17.jpg" alt="">
-                </div>
+            <div class="col-sm-1">
+                <button id = "next-btn" class = "scroll-btn VCentered float-left"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
-
-
-
-
-
+    <div id = "contact" class="nav-contact-menu page">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="nav-contact-img-container">
+                    <h1 id = "nav-contact-nametag">
+                    </h1>
+                    <span id = "nav-contact-img-credit">
+                        📷 @timeakadariulia
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div id = "move" class="nav-contact-container VCentered">
+                    <div id="nav-contact-content">
+                        <p id = "nav-contact-heading" class = "">
+                            Hi, I am a <span class = "text-highlight">Portrait Photographer</span> and<br>
+                            a full-time <span class = "text-highlight">Computer Science Student</span>.
+                        </p>
+                        <!-- <h3 id = "nav-contact-subheading">100% Chinese with an European twist.</h3> -->
+                        <p id="nav-contact-desc-1" class = "nav-contact-desc">
+                            Besides academics, my work involves <span class = "text-highlight">Portrait photography</span>, <br> <span class = "text-highlight">Modern & Minimalistic UI Designs</span> and <span class = "text-highlight"> Web Development</span>.
+                        </p>
+                        <p id="nav-contact-desc-2" class = "nav-contact-desc">
+                                Currently finishing the first year of my CompSci BSc degree<br>
+                                <span class = "text-highlight">@ Technology University of Eindhoven, NL</span>
+                        </p>
+                    </div>
+                    <a id = "nav-contact-btn" class="btn" href = "mailto:jimmyqian717@gmail.com?Subject=Collboration" target="_top">Contact Me
+                        <span class = "emoji">&#128076;</span>
+                    </a>
+                    <div id="nav-social-container">
+                        <a class = "nav-social-icon mx-1" href = "https://www.instagram.com/jimmyq_qlx/"><img src="/images/assets/instagram.png" alt=""></a>
+                        <a class = "nav-social-icon mx-1" href = "https://www.facebook.com/profile.php?id=100006561281707"><img src="/images/assets/facebook-logo.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="lib/slick/slick.min.js"></script>
+    <script type = "text/javascript" src = "lib/js/main.js"></script>
+    <!-- Slick -->
     <script>
-        //Pre-loader
-        window.onload = function(){
-            //alert("loaded");
-            $("#preloader").fadeOut(300);
-            
-        };
-    </script>
-    <script>
-    </script>
-    <!--Scrolling script-->
-    <script>
-        // When the user scrolls the page, execute myFunction 
-        window.onscroll = function() {myFunction()};
+        // document.onmousemove = translateBg;
+       $(document).ready(function(){
+            $('.responsive').slick({
+                // dots: true,
+                infinite: true,
+                speed: 400,
+                slidesToShow: 5,
+                slidesToScroll:1,
+                arrows:false,
+                // variableWidth: true,
+                // fade:true,
+                responsive: [
+                    {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        swipeToSlide:true,
+                        dots: true
+                    }
+                    },
+                    {
+                    breakpoint: 600,
+                    settings: {
+                        swipeToSlide:true,
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        swipeToSlide:true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+            });
+            addSlickProp("portraits");
+        });
+       $("#prev-btn").on("click", function(){
+           $(".gallery").slick("slickPrev")
+       });
+       $("#next-btn").on("click", function(){
+           $(".gallery").slick("slickNext")
+       }); 
 
-        function myFunction() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("myBar").style.width = scrolled + "%";
+
+       var sectionFlag = "portraits";
+       function loadSection(element){
+            var elem = $(element);
+            // var parent = $(elem.parent())
+            var newSection = elem.attr("data-section");
+            // Different section request
+            if (newSection != sectionFlag){
+                $(".active-nav-item").first().removeClass("active-nav-item");
+                elem.addClass("active-nav-item")
+                // set new section flag
+                sectionFlag = newSection;
+                removeSlickProp();
+                addSlickProp(newSection);
+            }
+            // Same section request
+            else{
+                // console.log("requesting identical section")
+                return false;
+            }
+           
+        }
+         // Theme color list
+        var themebg = [];
+        var path, imageList, newSection, element;
+        function addSlickProp(section){
+            newSection = section;
+            var jsonPath = "/json/images.json";
+            $.getJSON( jsonPath, function( data ) {
+                imageList = data[newSection].images;
+                $.each(imageList, function(index){
+                    path = imageList[index].url;
+                    element =  "<img src = '" + path + "' alt='' class='VCentered image-container gallery-images'>"
+                        $('.responsive').slick('slickAdd',element);
+                        // console.log("added");
+                })
+                // After loading all images, show them
+                showImage();
+            });
+            // for (var i = 1; i < 19; i ++){
+            //     path = "'/images/" + section + "/" + section + "-" + i + ".jpg'"
+            //     var element =  "<img src =" + path + "alt='' class='VCentered image-container gallery-images'>"
+            //     $('.responsive').slick('slickAdd',element);
+            //     console.log("added");
+            //     themebg[i - 1] = getRandomColor();
+            // }
         }
 
-        //Button scroll
-        $("#continue-btn").click(function(){
-            $("body").css("overflow","scroll");
-            $("#landing-image").toggleClass("fadeUpImage");
-            $("#landing-heading2").toggleClass("fadeUpHeading");
-            // $([document.documentElement, document.body]).animate({
-            //     scrollTop: $("#work-photography").offset().top
-            // }, 500);
-        })
-        // On scroll nav fade
-        var lastScrollTop = 0;
-            $(window).scroll(function(event){
-            var st = $(this).scrollTop();
-            if (st > lastScrollTop){
-                $(".navbar").fadeOut("fast");
-            } else {
-                // upscroll code
-                $(".navbar").fadeIn("fast");
-            }
-            lastScrollTop = st;
+        function removeSlickProp(){
+            $(".slick-slide").each(function(image){
+                var index = $(this).attr("data-slick-index");
+                $(".gallery").slick("slickRemove", index, null, true);
+                // console.log("removed");
+            })
+            // $('.gallery').slick('removeSlide', null, null, true);
+        }
+
+        $('.gallery, .nav-contact-img-container').contextmenu(function(){
+            return false;
         });
+            
+    </script>
+    <!-- Navbar -->
+    <script>
+        var isMobile =  window.matchMedia("only screen and (max-width: 760px)").matches;;
+        // Detecting screen resizing and update flag
+        $( document ).ready(function() { 
+            $(window).resize(function(){
+                isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+                return isMobile
+            })
+        });
+        
+        $(".nav-item").on("click", function(){
+            isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+            if(isMobile){
+                $("#nav-button").click();
+            }
+        })
+        // Navbar script
+        function animateBtn(x) {
+            isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+            x.classList.toggle("change");
+            showNavMenu(isMobile);
+        }
+        function showNavMenu(flag){
+            // console.log(flag);
+            //Mobile nav menu
+            if (flag){
+                $(".navbar, .nav-container").toggleClass("display");
+                $(".nav-overlay").toggleClass("show-overlay");
+                $(".nav-item").toggleClass("show-nav-item");
+                $(".nav-link").removeClass("VCentered");
+                var delay = 0
+                $(".show-nav-item").each(function(){
+                    var element = $(this);
+                    delay += 0.1;
+                    element.css("animation-delay", delay + 's');
+                });
+
+            }
+            //Desktop nav menu
+            else{
+                // Show contact page
+                $(".nav-contact-img-container").toggleClass("show-nav-contact-img");
+                $(".nav-contact-container").toggleClass("show-nav-contact-container");
+                $(".nav-contact-menu").toggleClass("show-nav-contact-menu")
+            }
+        }
+        function showContactMenu(flag){
+            // if it is mobile
+            if (flag){
+                return false
+            }
+        }
+        function hideContactContent(){
+            $("#nav-contact-content").toggleClass("hide-contact-content");
+        }
+        
+        // Gallery script
+        // $(window).on('scroll', showImage);
+        // $(window).on('load', showImage);
+        $(document).ready(function(){
+            showImage()
+        })
+        var animationTime = 0;
+        function showImage(){
+            // var window_height = $(window).height();
+            // var window_top_position = $(window).scrollTop();
+            // var window_bottom_position = (window_top_position + window_height);
+            // console.log("qwfqw");
+            $(".image-container").each(function(){
+                var element = $(this);
+                // var element_height = element.outerHeight();
+                // var element_top_position = element.offset().top;
+                // var element_bottom_position = (element_top_position + element_height);
+                // if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
+                //     element.addClass("fadeLeft");
+                // }
+               
+                element.addClass("fadeLeft");
+            });
+            // Adding animation delay to each image
+            var delay = 0;
+            $(".fadeLeft").each(function(){
+                delay += 0.1;
+                $(this).css("animation-delay", delay + 's');
+            })
+        };
+
+    </script>
+    <!-- Misc -->
+    <script>
+         window.onload = function(){
+            $("#preloader").fadeOut(300);
+        };
+        // Random color in hex
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Change background color on mouseover
+        function switchThemebg(image){
+            var image = $(image);
+            var index = image.index();
+            // console.log(themebg[index]);
+            var bg = themebg[index];
+            $("body").css("background-color", bg)
+        }
+
+         $(document).ready(function(){
+            $('.gallery-images').mousedown(function (e) {
+                if(e.button == 2) { // right click
+                    // console.log("qwfqw");
+                    return false; // do nothing!
+                }
+            })
+
+            $(".gallery-images").on("click", function(){
+                $(this).toggleClass("zoom-image");
+            })
+
+        })
+
+    
     </script>
 </body>
 </html>

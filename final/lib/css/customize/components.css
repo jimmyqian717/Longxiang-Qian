@@ -1,0 +1,119 @@
+.gallery-images{
+    filter: grayscale(80%);
+    opacity:1;
+    transition:.3s ease;
+    margin:0 20px;
+    display: block;
+}
+.gallery-images:hover{
+    cursor: pointer;
+    filter: grayscale(0%);
+}
+.scroll-btn{
+    /* border:2px solid #FF0045; */
+    border:none;
+    color:#FF0045;
+    font-family: 'Oswald', sans-serif;
+    /* padding:14px 50px; */
+    font-size: 2.2vw;
+    text-align: center;
+    transition: .2s ease-in-out;
+    display:inline-block;
+    background-color: transparent;
+    opacity:1;
+}
+.scroll-btn button:focus{
+    outline:none!important;
+    border:0!important;
+    opacity:1;
+}
+.scroll-btn:hover{
+    opacity:1;
+}
+#next-btn{
+    right:0;
+    float: right;
+}
+/* .scroll-btn:hover{
+    background: #FF0045;
+    color: white
+} */
+
+.image-container{
+    visibility: hidden;
+    opacity: 0;
+}
+.fadeUp{
+    visibility: visible;
+    animation: fadeUp .3s ease-out normal forwards;
+}
+
+.fadeLeft{
+    visibility: visible;
+    animation: fadeLeft .3s ease-out normal forwards;
+}
+
+
+@media only screen and (max-width: 576px) {
+    .gallery-images{
+        filter: grayscale(0);
+        padding:0 ;
+        padding:0 30px;
+        position: relative;
+        /* left:-40px; */
+        margin:0;
+        /* margin-left:10px; */
+    }
+    #scroll-btn-container{
+        margin:0;
+        height:10vh;
+        visibility: hidden
+    }
+    .scroll-btn{
+        margin-top:calc(10vh - 18px);
+        padding:0;
+        border:none;
+        background-color:transparent;
+        font-size: 0;
+        color:#FF0045;
+        visibility: hidden
+    }
+    .scroll-btn:focus{
+        color:#FF0045;
+        background-color: transparent;
+    }
+    .fas{
+        font-size:36px;
+    }
+    #prev-btn{
+        margin-left: 40px;
+    }
+    #next-btn{
+        margin-right: 40px;
+    }
+  }
+
+@keyframes fadeUp{
+    0%{
+        opacity: 0;
+        transform:translateY(6%)
+    }
+    100%{
+        opacity: 1;
+        transform:translateY(0%) 
+    }
+}
+
+@keyframes fadeLeft{
+    0%{
+        opacity: 0;
+        transform:translateX(-6%)
+    }
+    100%{
+        opacity: 1;
+        transform:translateX(0%)
+    }
+}
+
+
+
