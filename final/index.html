@@ -164,6 +164,7 @@
 
 
        var sectionFlag = "portraits";
+    //    Gallery "routing"
        function loadSection(element){
             var elem = $(element);
             // var parent = $(elem.parent())
@@ -187,6 +188,7 @@
          // Theme color list
         var themebg = [];
         var path, imageList, newSection, element;
+        // Adding slick images
         function addSlickProp(section){
             newSection = section;
             var jsonPath = "/json/images.json";
@@ -196,7 +198,6 @@
                     path = imageList[index].url;
                     element =  "<img src = '" + path + "' alt='' class='VCentered image-container gallery-images'>"
                         $('.responsive').slick('slickAdd',element);
-                        // console.log("added");
                 })
                 // After loading all images, show them
                 showImage();
@@ -215,7 +216,32 @@
         $('.gallery, .nav-contact-img-container').contextmenu(function(){
             return false;
         });
-            
+        // Adding animation class
+        var animationTime = 0;
+        function showImage(){
+            var imageCount = $(".gallery-images").length;
+            var imageLoaded = 0;
+            $(".image-container").each(function(){
+                var element = $(this);
+                element.on("load", function(){
+                    console.log("Loaded")
+                })
+                imageLoaded++;
+            });
+            if (imageLoaded == imageCount){
+                // console.log("qf")
+                $(".image-container").each(function(){
+                    var element = $(this);
+                    element.addClass("fadeLeft");
+                });
+            }
+            // Adding animation delay to each image
+            var delay = 0;
+            $(".fadeLeft").each(function(){
+                delay += 0.1;
+                $(this).css("animation-delay", delay + 's');
+            })
+        };
     </script>
     <!-- Navbar -->
     <script>
@@ -274,49 +300,11 @@
             $("#nav-contact-content").toggleClass("hide-contact-content");
         }
         
-        $(window).on("load", function(){
-            showImage()
-        })
-        var animationTime = 0;
-        function showImage(){
-            $(".image-container").each(function(){
-                var element = $(this);
-                element.addClass("fadeLeft");
-            });
-            // Adding animation delay to each image
-            var delay = 0;
-            $(".fadeLeft").each(function(){
-                delay += 0.1;
-                $(this).css("animation-delay", delay + 's');
-            })
-        };
-
+       
     </script>
     <!-- Misc -->
     <script>
-        $(document).ready(function() {
-            // When we begin, assume no images are loaded.
-            var imagesLoaded = 0;
-            // Count the total number of images on the page when the page has loaded.
-            var totalImages = $('img').length;
-
-            // After an image is loaded, add to the count, and if that count equals the
-            // total number of images, fire the allImagesLoaded() function.
-            $('.gallery-images').each(function(){
-                console.log(imagesLoaded);
-                $(this).on('load', function(event) {
-                    imagesLoaded++;
-                    
-                    if (imagesLoaded == totalImages) {
-                        allImagesLoaded();
-                    }
-                });
-            });
-
-            function allImagesLoaded() {
-                console.log('ALL IMAGES LOADED');
-            }
-        });
+       
          $(window).on("load", function(){
             $("#preloader").fadeOut(300);
         });
@@ -339,7 +327,8 @@
             $("body").css("background-color", bg)
         }
 
-         $(document).ready(function(){
+        // Prevent downloading images
+        $(document).ready(function(){
             $('.gallery-images').mousedown(function (e) {
                 if(e.button == 2) { // right click
                     // console.log("qwfqw");
