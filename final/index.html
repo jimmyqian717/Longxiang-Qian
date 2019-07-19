@@ -10,19 +10,20 @@
     <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/> 
     <link rel="stylesheet" type="text/css" href="lib/css/customize/main.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/customize/navbar2.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/customize/contact2.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/navbar.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/customize/contact.css">
     <link rel="stylesheet" type="text/css" href="lib/css/customize/components.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/lib/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/lib/slick/slick-theme.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="/lib/css/customize/animate.css"/> -->
     <link href="https://fonts.googleapis.com/css?family=Prata|Oswald|Abril+Fatface|&display=swap" rel="stylesheet">
+    <link href = "./lib/css/customize/pace.css"/>
 </head>
 <body>
-    <!-- <section id = "preloader">
+    <section id = "preloader">
         <img class = "preloader-img VCentered" src="images/assets/svg-loaders/hearts.svg"/>
-    </section> -->
+    </section>
     <a id = "nav-brand" href="#logo">Longxiang Qian</a>
     <nav class="navbar navbar-expand-sm">
         <div class="col-sm-10 mx-auto nav-container">
@@ -99,6 +100,7 @@
             </div>
         </div>
     </div>
+    <!-- <script src = "./lib/js/pace.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -142,7 +144,8 @@
                     settings: {
                         swipeToSlide:true,
                         slidesToShow: 1,
-                        slidesToScroll: 1
+                        slidesToScroll: 1,
+                        dots: true
                     }
                     }
                     // You can unslick at a given breakpoint now by adding:
@@ -198,13 +201,6 @@
                 // After loading all images, show them
                 showImage();
             });
-            // for (var i = 1; i < 19; i ++){
-            //     path = "'/images/" + section + "/" + section + "-" + i + ".jpg'"
-            //     var element =  "<img src =" + path + "alt='' class='VCentered image-container gallery-images'>"
-            //     $('.responsive').slick('slickAdd',element);
-            //     console.log("added");
-            //     themebg[i - 1] = getRandomColor();
-            // }
         }
 
         function removeSlickProp(){
@@ -278,27 +274,13 @@
             $("#nav-contact-content").toggleClass("hide-contact-content");
         }
         
-        // Gallery script
-        // $(window).on('scroll', showImage);
-        // $(window).on('load', showImage);
-        $(document).ready(function(){
+        $(window).on("load", function(){
             showImage()
         })
         var animationTime = 0;
         function showImage(){
-            // var window_height = $(window).height();
-            // var window_top_position = $(window).scrollTop();
-            // var window_bottom_position = (window_top_position + window_height);
-            // console.log("qwfqw");
             $(".image-container").each(function(){
                 var element = $(this);
-                // var element_height = element.outerHeight();
-                // var element_top_position = element.offset().top;
-                // var element_bottom_position = (element_top_position + element_height);
-                // if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
-                //     element.addClass("fadeLeft");
-                // }
-               
                 element.addClass("fadeLeft");
             });
             // Adding animation delay to each image
@@ -312,9 +294,32 @@
     </script>
     <!-- Misc -->
     <script>
-         window.onload = function(){
+        $(document).ready(function() {
+            // When we begin, assume no images are loaded.
+            var imagesLoaded = 0;
+            // Count the total number of images on the page when the page has loaded.
+            var totalImages = $('img').length;
+
+            // After an image is loaded, add to the count, and if that count equals the
+            // total number of images, fire the allImagesLoaded() function.
+            $('.gallery-images').each(function(){
+                console.log(imagesLoaded);
+                $(this).on('load', function(event) {
+                    imagesLoaded++;
+                    
+                    if (imagesLoaded == totalImages) {
+                        allImagesLoaded();
+                    }
+                });
+            });
+
+            function allImagesLoaded() {
+                console.log('ALL IMAGES LOADED');
+            }
+        });
+         $(window).on("load", function(){
             $("#preloader").fadeOut(300);
-        };
+        });
         // Random color in hex
         function getRandomColor() {
             var letters = '0123456789ABCDEF';
